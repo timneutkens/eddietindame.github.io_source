@@ -1,0 +1,23 @@
+{
+    "env": {
+        "development": {
+            "presets": ["next/babel"],
+            "plugins": ["babel-plugin-root-import"]
+        },
+        "production": {
+            "presets": ["next/babel"],
+            "plugins": ["babel-plugin-root-import"]
+        },
+        "test": {
+            "presets": [
+                [
+                    "next/babel",
+                    {
+                        "preset-env": { "modules": "commonjs" }
+                    }
+                ]
+            ],
+            "plugins": ["babel-plugin-root-import"]
+        }
+    }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "eddietindame.github.io",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export",
+    "export:serve": "yarn build && next export && cd out && npx serve -p 8080; cd ..",
+    "test": "NODE_ENV=test jest",
+    "refresh": "rm -rf node_modules && rm yarn.lock && yarn"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "next": "9.0.5",
+    "react": "16.9.0",
+    "react-dom": "16.9.0"
+  },
+  "devDependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "autoprefixer": "^9.6.1",
+    "babel-plugin-root-import": "^6.4.1",
+    "cssnano": "^4.1.10",
+    "file-loader": "^4.2.0",
+    "jest": "^24.9.0",
+    "node-sass": "^4.12.0",
+    "postcss": "^7.0.17",
+    "postcss-loader": "^3.0.0",
+    "scss-loader": "^0.0.1",
+    "url-loader": "^2.1.0"
+  }
+}

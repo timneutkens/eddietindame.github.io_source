@@ -1,0 +1,100 @@
+.u-light {
+    font-weight: 100;
+}
+
+.u-transition {
+    transition: all 0.5s ease-in-out;
+}
+
+.u-margin-top-15 {
+    margin-top: 15px !important;
+}
+
+.u-margin-right-0 {
+    margin-right: 0 !important;
+}
+
+.u-margin-bottom {
+    margin-bottom: 15px !important;
+}
+
+.u-margin-bottom-double {
+    margin-bottom: 30px !important;
+}
+
+.u-margin-bottom-80-desktop {
+    @include media-breakpoint-up(md) {
+        margin-bottom: 80px !important;
+    }
+}
+
+.u-margin-vertical {
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+}
+
+.u-margin-vertical-double {
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
+}
+
+.u-margin-vertical-03rem {
+    margin-top: 0.3rem !important;
+    margin-bottom: 0.3rem !important;
+}
+
+.u-no-margin {
+    margin: 0 !important;
+}
+
+.u-flex {
+    display: flex !important;
+}
+
+.u-flex-1 {
+    flex: 1 !important;
+}
+
+.u-h-100 {
+    height: 100% !important;
+}
+
+.u-trans-black-bg {
+    background-color: rgba(0,0,0,.15);
+    padding: 5px;
+    position: relative;
+    z-index: -3;
+
+    img.logo {
+        background: 0;
+        padding: 0 10px;
+        border-radius: 0;
+        max-width: 100%;
+    }
+}
+
+.u-orange {
+    color: $orange !important;
+}
+
+.u-font-size-14 {
+    font-size: 14px !important;
+}
+
+.u-clickable {
+    cursor: pointer;
+}
+
+.u-disable-click {
+    pointer-events: none;
+}
+
+.u-flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.u-no-click {
+    pointer-events: none !important;
+}

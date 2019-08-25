@@ -1,0 +1,11 @@
+{
+    "editor.detectIndentation": false,
+    "eslint.enable": false,
+    "typescript.format.enable": false,
+    "files.associations": {
+        "**/components/**/index.js": "javascript",
+        "**/components/**/*.js": "javascriptreact",
+        "**/containers/**/*.js": "javascriptreact",
+        "**/pages/**/*.js": "javascriptreact"
+    }
+}
