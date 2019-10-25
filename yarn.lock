@@ -5412,6 +5412,12 @@ querystring@0.2.0, querystring@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/querystring/-/querystring-0.2.0.tgz#b209849203bb25df820da756e747005878521620"
 
+raf@^3.4.1:
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/raf/-/raf-3.4.1.tgz#0742e99a4a6552f445d73e3ee0328af0ff1ede39"
+  dependencies:
+    performance-now "^2.1.0"
+
 randombytes@^2.0.0, randombytes@^2.0.1, randombytes@^2.0.5:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/randombytes/-/randombytes-2.1.0.tgz#df6f84372f0270dc65cdf6291349ab7a473d4f2a"
@@ -5467,6 +5473,12 @@ react-is@16.8.6:
 react-is@^16.8.1, react-is@^16.8.4:
   version "16.9.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.9.0.tgz#21ca9561399aad0ff1a7701c01683e8ca981edcb"
+
+react-scrollchor@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/react-scrollchor/-/react-scrollchor-6.0.0.tgz#7c2545e743355c0069f4c6a5ab4f9d9875182b4d"
+  dependencies:
+    requestanimationframe-timer "1.x.x"
 
 react@16.9.0:
   version "16.9.0"
@@ -5681,6 +5693,12 @@ request@^2.87.0, request@^2.88.0:
     tough-cookie "~2.4.3"
     tunnel-agent "^0.6.0"
     uuid "^3.3.2"
+
+requestanimationframe-timer@1.x.x:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/requestanimationframe-timer/-/requestanimationframe-timer-1.0.5.tgz#55f75f33f123812c6db245b6ad72a1c8b4bfc1dd"
+  dependencies:
+    raf "^3.4.1"
 
 require-directory@^2.1.1:
   version "2.1.1"

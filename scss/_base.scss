@@ -8,6 +8,12 @@ html {
 
 body {
     height: 100%;
+    font-family: 'Helvetica Neue', sans-serif;
+    color: $black;
+}
+
+section {
+    background-color: $white;
 }
 
 img {
@@ -17,4 +23,20 @@ img {
 video {
     display: block;
     max-width: 100%;
+}
+
+a {
+
+    &:link, &:visited {
+        color: $black;
+        text-decoration: none;
+    }
+}
+
+h1 {
+    text-align: right;
+    font-weight: bold;
+    font-size: 10rem;
+    line-height: 1;
+    width: 85%;
 }

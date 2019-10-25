@@ -1,0 +1,36 @@
+.contact {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+
+    &__inner {
+        position: relative;
+    }
+
+    &__portrait {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    &__items {
+        position: relative;
+        z-index: 1;
+        padding-left: 40%;
+    }
+
+    &__item {
+
+        &__link {
+            font-size: 5rem;
+            font-weight: bold;
+            line-height: 1;
+
+            &--email {
+                font-size: 3rem;
+            }
+        }
+    }
+}

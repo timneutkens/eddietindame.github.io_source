@@ -1,5 +1,8 @@
 import React from 'react'
-import App from '~components/App'
+import Landing from '~components/Landing'
+import Header from '~components/Header'
+import About from '~components/About'
+import Contact from '~components/Contact'
 import '~scss/index.scss'
 
 const Index = () =>
@@ -7,7 +10,10 @@ const Index = () =>
         id="index"
         className="index"
     >
-        <App />
+        <Header />
+        <Landing />
+        <About />
+        <Contact />
     </div>
 
 export default Index

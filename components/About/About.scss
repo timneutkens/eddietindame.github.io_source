@@ -1,0 +1,12 @@
+.about {
+    position: relative;
+    z-index: 1;
+    padding: 1em;
+
+    &__content {
+        font-size: 10rem;
+        font-weight: bold;
+        text-align: right;
+        line-height: 1;
+    }
+}
