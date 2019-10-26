@@ -1,6 +1,6 @@
 import React from 'react'
 import Landing from '~components/Landing'
-import Header from '~components/Header'
+import Nav from '~components/Nav'
 import About from '~components/About'
 import Contact from '~components/Contact'
 import '~scss/index.scss'
@@ -10,7 +10,7 @@ const Index = () =>
         id="index"
         className="index"
     >
-        <Header />
+        <Nav />
         <Landing />
         <About />
         <Contact />
