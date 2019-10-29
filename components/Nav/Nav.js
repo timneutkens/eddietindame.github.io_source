@@ -1,6 +1,5 @@
 import React, { useRef } from 'react'
 import { useRouter } from 'next/router'
-import Link from 'next/link'
 import Scrollchor from 'react-scrollchor'
 import './Nav.scss'
 
@@ -30,10 +29,15 @@ const Nav = () => {
     ]
     const _onClickAnchor = e => {
         const { pathname, dataset } = e.target
-        const ref = navItems[parseInt(dataset.index[0])].ref.current
+        const ref = pathname !== '/work' ? navItems[parseInt(dataset.index[0])].ref.current : null
         e.preventDefault()
         router.push(pathname)
-            .then(() => { ref.simulateClick() })
+            .then(() => {
+                if (ref)
+                    setTimeout(() => { // timeout because page transition takes 300ms
+                        ref.simulateClick()
+                    }, 309)
+            })
     }
     const _onHoverAnchor = () => {
         router.prefetch('/')
@@ -70,9 +74,18 @@ const Nav = () => {
                                     className="nav__items__link"
                                     disableHistory={true}
                                 >{item.label}</Scrollchor>
-                            : <Link href={item.href}>
-                                <a className="nav__items__link">{item.label}</a>
-                            </Link>
+                            : router.pathname === '/work'
+                                ? <Scrollchor
+                                    to="#work"
+                                    className="nav__items__link"
+                                    disableHistory={true}
+                                >{item.label}</Scrollchor>
+                                : <a
+                                    href={item.href}
+                                    className="nav__items__link"
+                                    onClick={_onClickAnchor}
+                                    onMouseEnter={_onHoverAnchor}
+                                >{item.label}</a>
                     }
                     </li>
                 )

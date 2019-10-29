@@ -16,12 +16,6 @@
             padding: 1em;
         }
     
-        &__link {
-
-            &:link, &:visited, &:hover, &:focus, &:active {
-                text-decoration: none;
-                color: inherit;
-            }
-        }
+        // &__link {}
     }
 }

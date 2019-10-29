@@ -1,0 +1,13 @@
+.project-gallery {
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__item {
+        margin-bottom: 60px;
+    }
+}

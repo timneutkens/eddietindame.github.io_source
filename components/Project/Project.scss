@@ -1,0 +1,119 @@
+.project {
+    $self: &;
+    $mb: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 720px;
+    min-height: 400px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    &--reversed, &:nth-child(even) {
+
+        #{$self}__inner {
+            padding-left: 0;
+            padding-right: 20%;
+        }
+        
+        #{$self}__thumbnail {
+            left: unset;
+            right: 0;
+        }
+    }
+
+    &__inner {
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        // align-items: center;
+        height: 100%;
+        padding-left: 20%;
+    }
+
+    &__title {
+        // width: 100%;
+        margin-bottom: $mb;
+        font-weight: 900;
+    }
+
+    &__thumbnail {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        // width: 250px;
+        height: 400px;
+
+        // &--video {
+        //     width: auto;
+        // }
+    }
+
+    &__description {
+        margin-bottom: $mb;
+    }
+
+    &__tags {
+        // width: 100%;
+        margin-bottom: calc(#{$mb} - 5px);
+        // padding: 5px;
+
+        &__tag {
+            display: inline-block;
+            margin: 0 5px 5px 0;
+            padding: 0.2em 0.5em;
+            border-radius: 2px;
+            color: $white;
+            background-color: $black;
+
+            &:last-child {
+                margin: 0 0 5px 0;
+            }
+        }
+    }
+
+    &__link {
+
+        &:hover, &:active, &:focus {
+            border-bottom: solid 4px $black;
+            text-decoration: none;
+        }
+
+        &:after {
+            content: '';
+            display: inline-block;
+            width: 0.6em;
+            height: 0.6em;
+            margin-left: 0.2em;
+            background-image: url('/static/img/link.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+
+    &__credit {
+        color: $grey;
+
+        // &__label {}
+
+        &__value {
+            font-weight: bold;
+        }
+    }
+
+    &__highlight {
+        $padding: 5px;
+        display: inline;
+        position: relative;
+        left: $padding;
+        padding: $padding $padding $padding 0;
+        color: inherit;
+        background-color: $white;
+        box-shadow: $padding 0 0 $white,
+                    $padding*-1 0 0 $white;
+    }
+}

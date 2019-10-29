@@ -18,7 +18,7 @@
     &__items {
         position: relative;
         z-index: 1;
-        padding-left: 40%;
+        margin-left: 40%;
     }
 
     &__item {
@@ -31,6 +31,18 @@
             &--email {
                 font-size: 3rem;
             }
+        }
+
+        &__highlight {
+            $padding: 5px;
+            display: inline;
+            position: relative;
+            left: $padding;
+            padding: $padding $padding $padding 0;
+            color: $black;
+            background-color: $white;
+            box-shadow: $padding 0 0 $white,
+                        $padding*-1 0 0 $white;
         }
     }
 }
