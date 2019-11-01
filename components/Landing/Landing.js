@@ -7,7 +7,7 @@ const Landing = () =>
         className="landing"
     >
         <div className="landing__inner">
-            <h1>eddie<br />tindame</h1>
+            <h1 className="landing__heading">eddie<br />tindame</h1>
         </div>
     </section>
 

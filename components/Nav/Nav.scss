@@ -3,19 +3,29 @@
     bottom: 0;
     left: 0;
     z-index: 2;
-    height: $headerHeight;
+    // height: $headerHeight;
     background-color: $white;
 
     &__items {
         display: flex;
         align-items: center;
         height: 100%;
-        margin: 0 1em;
-    
+        margin: 0 0.6em;
+
+        @include media-breakpoint-up(sm) {
+            margin: 0 1em;
+        }
+
         &__item {
-            padding: 1em;
+            padding: 0.6em 0.6em;
+
+            @include media-breakpoint-up(sm) {
+                padding: 1em;
+            }
         }
     
-        // &__link {}
+        &__link {
+            font-weight: 600;
+        }
     }
 }

@@ -14,9 +14,11 @@ const Index = () =>
             id="index"
             className="index"
         >
+            <div className="container-fluid">
             <Landing />
             <About />
             <Contact />
+        </div>
         </div>
     </>
 

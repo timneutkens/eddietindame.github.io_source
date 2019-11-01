@@ -3,33 +3,72 @@
     align-items: center;
     position: relative;
     z-index: 1;
-    height: 100vh;
+    padding: 3rem 0 5rem;
+
+    @include media-breakpoint-up(sm) {
+        padding: 3rem 0 8rem;
+    }
+
+    @include media-breakpoint-up(xl) {
+        height: 100vh;
+        padding: 0;
+    }
 
     &__inner {
         position: relative;
+
+        @include media-breakpoint-up(sm) {
+            top: 3em;
+        }
     }
 
     &__portrait {
-        position: absolute;
-        bottom: 0;
-        left: 0;
+
+        @include media-breakpoint-up(xl) {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
     }
 
     &__items {
         position: relative;
         z-index: 1;
-        margin-left: 40%;
+
+        // @include media-breakpoint-up(sm) {
+        //     margin-left: 20%;
+        // }
+
+        // @include media-breakpoint-up(md) {
+        //     margin-left: 25%;
+        // }
+
+        @include media-breakpoint-up(xl) {
+            margin-left: 35%;
+        }
     }
 
     &__item {
 
         &__link {
-            font-size: 5rem;
+            font-size: 2rem;
             font-weight: bold;
             line-height: 1;
 
+            @include media-breakpoint-up(sm) {
+                font-size: 5rem;
+            }
+
             &--email {
-                font-size: 3rem;
+                font-size: 1rem;
+
+                @include media-breakpoint-up(sm) {
+                    font-size: 2rem;
+                }
+
+                @include media-breakpoint-up(xl) {
+                    font-size: 3rem;
+                }
             }
         }
 

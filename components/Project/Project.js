@@ -16,6 +16,7 @@ const Project = ({
     className
 }) => {
     const Element = animation ? animated.div : 'div'
+    const isLongWord = (words, threshold) => words.split(' ').reduce((acc, cur) => acc ? acc : cur.length > threshold, false)
 
     return(
         <Element
@@ -23,7 +24,7 @@ const Project = ({
             style={animation}
         >
             <div className="project__inner">
-                <h2 className="project__title">
+                <h2 className={'project__title' + (isLongWord(name, 11) ? ' project__title--smaller' : '')}>
                     <span className="project__highlight">
                     {
                         href
@@ -45,7 +46,7 @@ const Project = ({
                         ? <video
                             className="project__thumbnail project__thumbnail--video"
                             // width="250"
-                            height="400"
+                            // height="400"
                             autoPlay
                             muted
                             loop
