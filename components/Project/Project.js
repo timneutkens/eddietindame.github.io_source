@@ -1,6 +1,9 @@
 import React from 'react'
 import { array, bool, object, string } from 'prop-types'
+import LazyLoad from 'react-lazyload'
 import { animated } from 'react-spring'
+import Image from '~components/Image'
+import Video from '~components/Video'
 import './Project.scss'
 
 const Project = ({
@@ -15,6 +18,14 @@ const Project = ({
     animation,
     className
 }) => {
+    const enterAnimation = {
+        opacity: 1,
+        transform: 'translate(0px, 0px)',
+        from: {
+            opacity: 0,
+            transform: 'translate(10000px, 0px)',
+        }
+    }
     const Element = animation ? animated.div : 'div'
     const isLongWord = (words, threshold) => words.split(' ').reduce((acc, cur) => acc ? acc : cur.length > threshold, false)
 
@@ -43,22 +54,29 @@ const Project = ({
                 </p>
                 {
                     video
-                        ? <video
-                            className="project__thumbnail project__thumbnail--video"
-                            // width="250"
-                            // height="400"
-                            autoPlay
-                            muted
-                            loop
+                        ? <LazyLoad
+                            height={400}
+                            offset={100}
+                            once
                         >
-                            <source src={video} type="video/mp4" />
-                            Your browser does not support the video tag.
-                        </video>
-                        : <img
-                            src={thumbnail}
-                            alt={name}
-                            className="project__thumbnail"
-                        />
+                            <Video
+                                className="project__thumbnail project__thumbnail--video"
+                                video={video}
+                                animation={enterAnimation}
+                            />
+                        </LazyLoad>
+                        : <LazyLoad
+                            height={400}
+                            offset={100}
+                            once
+                        >
+                            <Image
+                                className="project__thumbnail"
+                                animation={enterAnimation}
+                                image={thumbnail}
+                                alt={name}
+                            />
+                        </LazyLoad>
                 }
                 <ul className="project__tags">
                 {
@@ -90,7 +108,7 @@ const Project = ({
 Project.propTypes = {
     name: string.isRequired,
     thumbnail: string.isRequired,
-    video: string,
+    video: object,
     description: string.isRequired,
     tags: array.isRequired,
     href: string,

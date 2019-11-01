@@ -2,15 +2,18 @@
     $self: &;
     $mb: 1rem;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     position: relative;
     max-width: 720px;
     min-height: 400px;
     text-transform: uppercase;
     letter-spacing: 1px;
+
+    @include media-breakpoint-up(sm) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 
     &--reversed, &:nth-child(even) {
 
@@ -26,10 +29,6 @@
     }
 
     &__inner {
-        // display: flex;
-        // flex-direction: column;
-        // justify-content: center;
-        // align-items: center;
         height: 100%;
         margin-left: 20%;
         margin-top: 60px;
@@ -40,7 +39,6 @@
     }
 
     &__title {
-        // width: 100%;
         margin-bottom: $mb;
         font-size: 2rem;
         font-weight: 900;
@@ -59,11 +57,9 @@
         top: 0;
         left: 0;
         z-index: -1;
-        // width: 250px;
         height: 400px;
 
         &--video {
-            // width: auto;
             height: auto;
 
             @include media-breakpoint-up(sm) {
@@ -77,9 +73,7 @@
     }
 
     &__tags {
-        // width: 100%;
         margin-bottom: calc(#{$mb} - 5px);
-        // padding: 5px;
 
         &__tag {
             display: inline-block;

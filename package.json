@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "prod": "next build && next start -p 3001",
-    "export": "next export",
-    "export:serve": "next build && next export && cd out && npx serve -p 8080; cd ..",
+    "export": "next export && touch ./out/.nojekyll",
+    "export:serve": "next build && yarn export && cd out && npx serve -p 8080; cd ..",
     "test": "NODE_ENV=test jest",
     "refresh": "rm -rf node_modules && rm yarn.lock && yarn",
     "refresh:hard": "rm -rf node_modules && rm yarn.lock && yarn cache clean && yarn"
@@ -18,11 +18,13 @@
     "imagemin-mozjpeg": "^8.0.0",
     "next": "9.0.5",
     "next-compose-plugins": "^2.2.0",
+    "next-nprogress": "^1.4.0",
     "next-optimized-images": "^2.5.3",
     "next-page-transitions": "^1.0.0-beta.2",
     "prop-types": "^15.7.2",
     "react": "16.9.0",
     "react-dom": "16.9.0",
+    "react-lazyload": "^2.6.2",
     "react-scrollchor": "^6.0.0",
     "react-spring": "^8.0.27"
   },
@@ -38,5 +40,8 @@
     "postcss-loader": "^3.0.0",
     "scss-loader": "^0.0.1",
     "url-loader": "^2.1.0"
+  },
+  "resolutions": {
+    "styled-jsx": "3.0.0"
   }
 }

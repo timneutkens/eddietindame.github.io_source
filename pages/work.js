@@ -33,6 +33,9 @@ const Work = () => {
         {
             name: 'Joy Division - Unknown Pleasures - Reimagined',
             thumbnail: require('~assets/images/jd-upr-thumbnail.jpg'),
+            video: {
+                webm: '/static/video/jd_upr_video.webm'
+            },
             description: 'A microsite showcasing reimagined music videos created for the 40th aniversary of the seminal album "Unknown Pleasures".',
             tags: ['React', 'YouTube'],
             href: 'https://www.joydivisionofficial.com/reimagined/',
@@ -78,7 +81,9 @@ const Work = () => {
         {
             name: 'Disturbed - Evolution',
             thumbnail: 'https://placehold.it/250x400',
-            video: '/static/video/d_e_tg_video.mp4',
+            video: {
+                mp4: '/static/video/d_e_tg_video.mp4'
+            },
             description: 'A Facebook camera effect that turns the user into Disturbed\'s mascot: "The Guy".',
             tags: ['Augmented Reality', 'Spark AR', 'Facebook', 'Javascript'],
             href: 'https://www.facebook.com/Disturbed/videos/1097834423714167/',
@@ -125,7 +130,9 @@ const Work = () => {
         {
             name: 'Spotify Listening Party',
             thumbnail: 'https://placehold.it/250x400',
-            video: '/static/video/slp_video.webm',
+            video: {
+                webm: '/static/video/slp_video.webm'
+            },
             description: 'A real-time synchronised listening / chat room experience where fans can connect with artists. Designed as a one-time fan activation, a countdown is set for a certain time and date and then the party begins! Chat can be moderated and includes an admin panel.',
             tags: ['React', 'Spotify', 'NodeJS', 'Websockets'],
             credits: [
@@ -140,6 +147,30 @@ const Work = () => {
                 {
                     label: 'Designer',
                     value: 'Finn McLean'
+                }
+            ]
+        },
+        {
+            name: '#dualita',
+            thumbnail: 'https://placehold.it/250x400',
+            video: {
+                mp4: '/static/video/dl_ss_video.mp4',
+                webm: '/static/video/dl_ss_video.webm'
+            },
+            description: 'A Facebook camera effect / Snapchat lens that lets you sport Alita\'s war paint from the film Alita: Battle Angel. The main soundtrack "Swan Song" by Dua Lipa plays as you frown and apply the paint.',
+            tags: ['Augmented Reality', 'Spark AR', 'Facebook', 'Javascript', 'Snapchat', 'Snap Studio'],
+            credits: [
+                {
+                    label: 'Where',
+                    value: 'Firepit Technology'
+                },
+                {
+                    label: 'Commissioner',
+                    value: 'Warner Records'
+                },
+                {
+                    label: 'Designer',
+                    value: 'Eddie Tindame'
                 }
             ]
         },
