@@ -1,9 +1,11 @@
 import React from 'react'
 import App from 'next/app'
 import Router from 'next/router'
+import withGA from 'next-ga'
 import NProgress from 'next-nprogress/component'
 import { PageTransition } from 'next-page-transitions'
 import Nav from '~components/Nav'
+import { GA_TRACKING_ID } from '~config'
 
 class MyApp extends App {
 
@@ -31,4 +33,4 @@ class MyApp extends App {
     }
 }
 
-export default MyApp
+export default withGA(GA_TRACKING_ID, Router)(MyApp)
