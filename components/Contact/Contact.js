@@ -1,4 +1,5 @@
 import React from 'react'
+import { HOST } from '~config'
 import './Contact.scss'
 
 const Contact = () => {
@@ -14,16 +15,12 @@ const Contact = () => {
         },
         {
             label: 'linkedin',
-            href: '#'
+            href: 'https://uk.linkedin.com/in/eddietindame'
         },
         {
             label: 'c.v.',
-            href: 'https://eddietindame.github.io/img/eddie_tindame_cv.pdf'
+            href: `${HOST}/static/eddie_tindame_cv_2019.pdf`
         }
-        // {
-        //     label: 'twitter',
-        //     href: 'https://twitter.com/realquaid69'
-        // }
     ]
 
     return (
@@ -34,7 +31,7 @@ const Contact = () => {
             <div className="contact__inner container">
                 <img
                     src={require('~assets/images/portrait.jpg')}
-                    alt=""
+                    alt="Eddie Tindame"
                     className="contact__portrait"
                 />
                 <div className="contact__items">

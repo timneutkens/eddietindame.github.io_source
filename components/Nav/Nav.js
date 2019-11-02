@@ -17,7 +17,7 @@ const Nav = () => {
             ref: useRef()
         },
         {
-            label: 'Work',
+            label: 'Projects',
             href: '/work',
             ref: useRef()
         },
