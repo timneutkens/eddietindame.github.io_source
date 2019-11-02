@@ -10,8 +10,8 @@ const c = {
 
 c.HOST = c.DEV
     ? `http://localhost:${c.PORT}`
-    : 'https://eddietindamegithubionext.firepit1.now.sh'
-    // : 'https://eddietindame.github.io'
+    // : 'https://eddietindamegithubionext.firepit1.now.sh'
+    : 'https://eddietindame.github.io'
 
 c.FAVICON = `${c.HOST}/static/favicon.ico`
 c.OG_IMAGE = `${c.HOST}/static/img/og.png`
