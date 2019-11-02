@@ -10,7 +10,7 @@ const Video = ({
 }) => {
     const videoRef = useRef()
     const [isVideoLoaded, setIsVideoLoaded] = useState(false)
-    const _animation = useSpring(animation)
+    const _animation = animation ? useSpring(animation) : undefined
     const Element = animation ? animated.div : 'div'
     const _onVideoLoaded = () => { setIsVideoLoaded(true) }
 
@@ -50,7 +50,7 @@ const Video = ({
                         className="video__overlay"
                         style={{ opacity: isVideoLoaded ? 0 : 1 }}
                     >
-                        <div className="loader" />
+                        <div className="video__overlay__loader loader" />
                     </div>
             }
         </Element>

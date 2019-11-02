@@ -1,6 +1,7 @@
 import React from 'react'
 import { string, object } from 'prop-types'
 import { useSpring, animated } from 'react-spring'
+import Img from 'react-image'
 import './Image.scss'
 
 const Image = ({
@@ -9,16 +10,25 @@ const Image = ({
     image,
     alt
 }) => {
-    const _animation = useSpring(animation)
-    const Element = animation ? animated.img : 'img'
+    const _animation = animation ? useSpring(animation) : undefined
+    const Element = animation ? animated.div : 'div'
 
     return (
         <Element
             className={(className ? className + ' ' :  '') + 'image'}
             style={_animation}
-            src={image}
-            alt={alt}
-        />
+        >
+            <Img
+                src={image}
+                alt={alt}
+                className="image__inner"
+                loader={
+                    <div className="image__inner">
+                        <div className="image__loader loader" />
+                    </div>
+                }
+            />
+        </Element>
     )
 }
 

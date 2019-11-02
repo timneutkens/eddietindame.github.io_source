@@ -4,10 +4,8 @@
 }
 
 .work {
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-        padding: 15px 0 60px 0;
+    padding: 15px 0 60px 0;
+    overflow-x: hidden;
 
     @include media-breakpoint-up(sm) {
         padding: 60px;

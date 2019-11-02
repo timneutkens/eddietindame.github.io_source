@@ -52,7 +52,7 @@
         }
     }
 
-    &__thumbnail {
+    &__thumbnail, .lazyload-placeholder {
         position: absolute;
         top: 0;
         left: 0;

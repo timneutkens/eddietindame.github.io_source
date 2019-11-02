@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { array, bool, object, string } from 'prop-types'
-import LazyLoad from 'react-lazyload'
+import LazyLoad, { forceCheck } from 'react-lazyload'
 import { animated } from 'react-spring'
 import Image from '~components/Image'
 import Video from '~components/Video'
@@ -23,11 +23,13 @@ const Project = ({
         transform: 'translate(0px, 0px)',
         from: {
             opacity: 0,
-            transform: 'translate(10000px, 0px)',
+            transform: 'translate(10000px, 0px)'
         }
     }
     const Element = animation ? animated.div : 'div'
     const isLongWord = (words, threshold) => words.split(' ').reduce((acc, cur) => acc ? acc : cur.length > threshold, false)
+
+    useEffect(() => { forceCheck() }, [])
 
     return(
         <Element
@@ -61,8 +63,8 @@ const Project = ({
                         >
                             <Video
                                 className="project__thumbnail project__thumbnail--video"
-                                video={video}
                                 animation={enterAnimation}
+                                video={video}
                             />
                         </LazyLoad>
                         : <LazyLoad

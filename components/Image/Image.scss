@@ -1,1 +1,10 @@
-.image {}
+.image {
+
+    &__inner {
+        text-align: center;
+        height: 400px;
+        width: 250px;
+    }
+
+    &__loader { display: inline-block; }
+}
