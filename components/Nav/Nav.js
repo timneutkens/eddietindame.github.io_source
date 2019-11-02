@@ -29,14 +29,15 @@ const Nav = () => {
     ]
     const _onClickAnchor = e => {
         const { pathname, dataset } = e.target
-        const ref = pathname !== '/work' ? navItems[parseInt(dataset.index[0])].ref.current : null
+        const isWork = pathname === '/work'
+        const ref = !isWork ? navItems[parseInt(dataset.index[0])].ref.current : null
         e.preventDefault()
         router.push(pathname)
             .then(() => {
-                if (ref)
-                    setTimeout(() => { // timeout because page transition takes 300ms
-                        ref.simulateClick()
-                    }, 309)
+                setTimeout(() => { // timeout because page transition takes 300ms
+                    if (isWork) window.scrollTo(0, 0)
+                    if (ref) ref.simulateClick()
+                }, 309)
             })
     }
     const _onHoverAnchor = () => {
@@ -85,6 +86,7 @@ const Nav = () => {
                                     className="nav__items__link"
                                     onClick={_onClickAnchor}
                                     onMouseEnter={_onHoverAnchor}
+                                    data-index={i}
                                 >{item.label}</a>
                     }
                     </li>
