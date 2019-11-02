@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { array, bool, object, string } from 'prop-types'
 import LazyLoad, { forceCheck } from 'react-lazyload'
 import { animated } from 'react-spring'
@@ -18,6 +18,7 @@ const Project = ({
     animation,
     className
 }) => {
+    const [isPressed, setIsPressed] = useState(false)
     const enterAnimation = {
         opacity: 1,
         transform: 'translate(0px, 0px)',
@@ -33,7 +34,11 @@ const Project = ({
 
     return(
         <Element
-            className={(className ? (className + ' ') : '') + 'project' +  (isReversed ? ' project--reversed' : '')}
+            className={
+                (className ? (className + ' ') : '') + 'project' +
+                (isReversed ? ' project--reversed' : '') +
+                (isPressed ? ' project--pressed' : '')
+            }
             style={animation}
         >
             <div className="project__inner">
@@ -65,6 +70,8 @@ const Project = ({
                                 className="project__thumbnail project__thumbnail--video"
                                 animation={enterAnimation}
                                 video={video}
+                                onTouchStart={() => { setIsPressed(true) }}
+                                onTouchEnd={() => { setIsPressed(false) }}
                             />
                         </LazyLoad>
                         : <LazyLoad
@@ -77,6 +84,8 @@ const Project = ({
                                 animation={enterAnimation}
                                 image={thumbnail}
                                 alt={name}
+                                onTouchStart={() => { setIsPressed(true) }}
+                                onTouchEnd={() => { setIsPressed(false) }}
                             />
                         </LazyLoad>
                 }

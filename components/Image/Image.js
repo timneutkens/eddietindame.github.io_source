@@ -1,5 +1,5 @@
 import React from 'react'
-import { string, object } from 'prop-types'
+import { string, object, func } from 'prop-types'
 import { useSpring, animated } from 'react-spring'
 import Img from 'react-image'
 import './Image.scss'
@@ -8,7 +8,9 @@ const Image = ({
     className,
     animation,
     image,
-    alt
+    alt,
+    onTouchStart,
+    onTouchEnd
 }) => {
     const _animation = animation ? useSpring(animation) : undefined
     const Element = animation ? animated.div : 'div'
@@ -16,6 +18,8 @@ const Image = ({
     return (
         <Element
             className={(className ? className + ' ' :  '') + 'image'}
+            onTouchStart={onTouchStart}
+            onTouchEnd={onTouchEnd}
             style={_animation}
         >
             <Img
@@ -36,7 +40,9 @@ Image.propTypes = {
     className: string,
     animation: object,
     image: string.isRequired,
-    alt: string.isRequired
+    alt: string.isRequired,
+    onTouchStart: func,
+    onTouchEnd: func
 }
 
 export default Image

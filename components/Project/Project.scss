@@ -15,6 +15,11 @@
         justify-content: center;
     }
 
+    * {
+        opacity: 1;
+        transition: opacity 300ms ease-in-out;
+    }
+
     &--reversed, &:nth-child(even) {
 
         #{$self}__inner {
@@ -26,6 +31,14 @@
             left: unset;
             right: 0;
         }
+    }
+
+    &--pressed {
+
+        #{$self}__title,
+        #{$self}__description,
+        #{$self}__tags,
+        #{$self}__credit { opacity: 0.3; }
     }
 
     &__inner {
@@ -57,7 +70,12 @@
         top: 0;
         left: 0;
         z-index: -1;
+        max-width: 250px;
         height: 400px;
+
+        @include media-breakpoint-up(sm) {
+            max-width: initial;
+        }
 
         &--video {
             height: auto;
@@ -66,6 +84,8 @@
                 height: 400px;
             }
         }
+
+        img, video { pointer-events: none; }
     }
 
     &__description {

@@ -1,12 +1,14 @@
 import React, { useEffect, useState, useRef } from 'react'
-import { string, object } from 'prop-types'
+import { string, object, func } from 'prop-types'
 import { useSpring, animated } from 'react-spring'
 import './Video.scss'
 
 const Video = ({
     className,
     animation,
-    video
+    video,
+    onTouchStart,
+    onTouchEnd
 }) => {
     const videoRef = useRef()
     const [isVideoLoaded, setIsVideoLoaded] = useState(false)
@@ -23,6 +25,8 @@ const Video = ({
     return (
         <Element
             className={(className ? className + ' ' :  '') + 'video'}
+            onTouchStart={onTouchStart}
+            onTouchEnd={onTouchEnd}
             style={_animation}
         >
             <video
@@ -37,12 +41,15 @@ const Video = ({
                 loop
             >
                 {
-                    video.mp4 && <source src={video.mp4} type="video/mp4" />
+                    video.sources.map((source, i) =>
+                        <source
+                            key={i}
+                            src={`/static/video/${video.name}.${source}`}
+                            type={`video/${source}`}
+                        />
+                    )
                 }
-                {
-                    video.webm && <source src={video.webm} type="video/webm" />
-                }
-                Your browser does not support the video tag.
+                Your browser does not support the video tag. 😢
             </video>
             {
                 !isVideoLoaded &&
@@ -60,7 +67,9 @@ const Video = ({
 Video.propTypes = {
     className: string,
     animation: object,
-    video: object.isRequired
+    video: object.isRequired,
+    onTouchStart: func,
+    onTouchEnd: func
 }
 
 export default Video
