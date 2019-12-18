@@ -7,30 +7,26 @@ import { PageTransition } from 'next-page-transitions'
 import Nav from '~components/Nav'
 import { GA_TRACKING_ID } from '~config'
 
-class MyApp extends App {
-
-    render() {
-        const { Component, pageProps } = this.props
-        return (
-            <>
-                <NProgress
-                    color="#000000"
-                    spinner={false}
-                />
-                <Nav />
-                <PageTransition
-                    timeout={300}
-                    classNames="page-transition"
-                    skipInitialTransition
-                >
-                    <Component
-                        {...pageProps}
-                        key={typeof window === 'undefined' ? '' : Router.route}
-                    />
-                </PageTransition>
-            </>
-        )
-    }
+function MyApp({ Component, pageProps }) {
+  return (
+    <>
+        <NProgress
+            color="#000000"
+            spinner={false}
+        />
+        <Nav />
+        <PageTransition
+            timeout={300}
+            classNames="page-transition"
+            skipInitialTransition
+        >
+            <Component
+                {...pageProps}
+                key={typeof window === 'undefined' ? '' : Router.route}
+            />
+        </PageTransition>
+    </>
+  )
 }
 
 export default withGA(GA_TRACKING_ID, Router)(MyApp)

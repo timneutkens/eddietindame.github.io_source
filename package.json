@@ -3,11 +3,10 @@
   "version": "2.0.0",
   "private": true,
   "scripts": {
-    "build": "next build",
     "dev": "next dev",
+    "build": "next build && next export",
     "export": "next export && touch ./out/.nojekyll",
-    "export:serve": "next build && yarn export && cd out && npx serve -p 8080; cd ..",
-    "prod": "next build && next start -p 3001",
+    "export:serve": "npm run build && npx serve -p 8080 out",
     "refresh": "rm -rf node_modules && rm yarn.lock && yarn",
     "refresh:hard": "rm -rf node_modules && rm yarn.lock && yarn cache clean && yarn",
     "start": "next start",
@@ -15,7 +14,7 @@
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "next": "9.0.5",
+    "next": "^9.1.6",
     "next-ga": "^2.3.4",
     "next-nprogress": "^1.4.0",
     "next-page-transitions": "^1.0.0-beta.2",
